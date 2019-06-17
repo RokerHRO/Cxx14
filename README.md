@@ -63,7 +63,7 @@ https://en.cppreference.com/w/cpp/language/type
   * vordefiniert (built-in) vs. benutzerdefiniert
   * `static_cast`, `dynamic_cast`, `const_cast`, `reinterpret_cast`, Function-Style casts und C-Style casts:  `int i=(int)3.14;`
 
-## Benutzerdefinierte Typen
+## Benutzerdefinierte Typen
   * `struct`, `class`, `union`, `enum`
   * Member (data member, member functions, virtual)
   * Speicherlayout
