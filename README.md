@@ -36,6 +36,9 @@ https://en.cppreference.com/w/cpp/language/translation_phases
   * https://en.cppreference.com/w/cpp/language/adl
 * object vs. function
   * Lebensdauer (storage duration)
+* Value categories
+  * rvalue, lvalue, prvalue, glvalue, xvalue
+  * https://en.cppreference.com/w/cpp/language/value_category#prvalue
 * Beobachtbares Verhalten – https://en.cppreference.com/w/cpp/language/as_if
   * Ausnahmen:
     * https://en.cppreference.com/w/cpp/language/copy_elision
@@ -71,4 +74,5 @@ https://en.cppreference.com/w/cpp/language/type
   * Vererbung
     * Mehrfachvererbung, "virtual base class"
     * Abstrakte (Basis-)klassen
-  
+  * Pointer to member
+    `int T::*pm = &T::x; T t; t.*pm = 42;`
