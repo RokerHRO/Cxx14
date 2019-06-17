@@ -32,19 +32,43 @@ https://en.cppreference.com/w/cpp/language/translation_phases
 * declaration vs. definition
   * One-definition rule – Ausnahmen ("inline") – https://en.cppreference.com/w/cpp/language/definition
 * Sichtbarkeit, Name Lookup
+  * https://en.cppreference.com/w/cpp/language/lookup
+  * https://en.cppreference.com/w/cpp/language/adl
 * object vs. function
   * Lebensdauer (storage duration)
 * Beobachtbares Verhalten – https://en.cppreference.com/w/cpp/language/as_if
   * Ausnahmen:
     * https://en.cppreference.com/w/cpp/language/copy_elision
-    * 
+    * …
 * Implementation-defined behavior, unspecified behavior, undefined behavior
   * https://en.cppreference.com/w/cpp/language/ub
   * UB macht das _gesamte_ Programm ungültig!
+* RAII
+  * Zur sicheren Verwaltung _aller_ Ressourcen, nicht nur von Speicher
+  * exception-safety
 
 ## Typen
 https://en.cppreference.com/w/cpp/language/type
 
+* incomplete types vs. complete types
 * Pointer vs. Array
 * komplexe Deklarationen: `char *(*(**foo[][8])())[];`  http://unixwiz.net/techtips/reading-cdecl.html
-* Lösung: `typedef`, `using` deklarationen
+  * Lösung: `typedef`, `using` deklarationen
+* Typ"umwandlungen":
+  * implizit vs. explizit
+  * werterhaltend vs. verlustbehaftet
+  * vordefiniert (built-in) vs. benutzerdefiniert
+  * `static_cast`, `dynamic_cast`, `const_cast`, `reinterpret_cast`, Function-Style casts und C-Style casts:  `int i=(int)3.14;`
+
+## Benutzerdefinierte Typen
+  * `struct`, `class`, `union`, `enum`
+  * Member (data member, member functions, virtual)
+  * Speicherlayout
+    * Empty base optimization – https://en.cppreference.com/w/cpp/language/ebo
+  * Konstruktoren, Destruktoren, Operatoren
+    * Copy-C'tor, Move-C'tor, "Rule of 3", RAII, `explicit`
+    * `=default`, `=delete`
+  * Vererbung
+    * Mehrfachvererbung, "virtual base class"
+    * Abstrakte (Basis-)klassen
+  
