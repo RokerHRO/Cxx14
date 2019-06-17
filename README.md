@@ -30,11 +30,21 @@ https://en.cppreference.com/w/cpp/language/translation_phases
   * Nicht-ASCII-Zeichen sind möglich (nicht alle), aber unüblich
   * "Ungarische Notation" ist unüblich und i.A. misbilligt (mag aber in manchen Libs andere Konventionen geben)
 * declaration vs. definition
-  * One-definition rule – Ausnahmen ("inline")
+  * One-definition rule – Ausnahmen ("inline") – https://en.cppreference.com/w/cpp/language/definition
+* Sichtbarkeit, Name Lookup
 * object vs. function
+  * Lebensdauer (storage duration)
+* Beobachtbares Verhalten – https://en.cppreference.com/w/cpp/language/as_if
+  * Ausnahmen:
+    * https://en.cppreference.com/w/cpp/language/copy_elision
+    * 
+* Implementation-defined behavior, unspecified behavior, undefined behavior
+  * https://en.cppreference.com/w/cpp/language/ub
+  * UB macht das _gesamte_ Programm ungültig!
 
-### Typen
+## Typen
 https://en.cppreference.com/w/cpp/language/type
 
 * Pointer vs. Array
 * komplexe Deklarationen: `char *(*(**foo[][8])())[];`  http://unixwiz.net/techtips/reading-cdecl.html
+* Lösung: `typedef`, `using` deklarationen
