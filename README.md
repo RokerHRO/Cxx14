@@ -5,7 +5,7 @@ https://en.cppreference.com/w/
 ## Geschichte & Verwandtschaft zu C
 https://en.cppreference.com/w/cpp/language/history
 * K&R C → ISO C 90 → (C95) → **C99** (→ C11 → C18 …) 
-* "C with clases" → ISO C++98 → (C++03) → **C++11** → C++14 (→ C++17 → C++20 … )
+* "C with classes" → ISO C++98 → (C++03) → **C++11** → C++14 (→ C++17 → C++20 … )
 * ISO C, ISO C++, POSIX, …
 * C: "Trust the programmer"
 * C++: "You don't pay for what you don't need"
@@ -104,6 +104,7 @@ https://en.cppreference.com/w/cpp/language/type
   * Copy-C'tor, Move-C'tor, "Rule of 3", RAII, `explicit`
   * `=default`, `=delete`
   * `operator()`
+  * Konvertierungsoperatoren
 * Vererbung
   * Mehrfachvererbung, "virtual base class"
   * Abstrakte (Basis-)klassen
@@ -127,6 +128,13 @@ https://en.cppreference.com/w/cpp/language/type
     * Reverse-Iterator
     * Insert-Iterator
     * Move-Iterator
+
+### Zeichenketten
+* `std::basic_string<T>` T=`char`, `wchar_t`, `char16_t`, `char32_t` 
+* kann NUL characters
+* `"Foo"s` (seit C++14)
+* kein genormter Zeichensatz/Zeichenkodierung. UTF-8 ist üblich heute unter Unix
+* `std::string_view` (C++17) od. `boost::string_view` (C++11/14)
 
 ### Container
 https://en.cppreference.com/w/cpp/container
