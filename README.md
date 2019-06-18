@@ -49,6 +49,9 @@ https://en.cppreference.com/w/cpp/language/translation_phases
 * RAII
   * Zur sicheren Verwaltung _aller_ Ressourcen, nicht nur von Speicher
   * exception-safety
+* Iteratorkonzept
+  * Halboffene Intervalle
+  * Iteratorkategorien https://en.cppreference.com/w/cpp/iterator
 
 ## Typen
 https://en.cppreference.com/w/cpp/language/type
