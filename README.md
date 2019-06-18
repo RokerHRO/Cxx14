@@ -72,6 +72,8 @@ https://en.cppreference.com/w/cpp/language/type
   * `const`, `volatile`
   * const-pointer vs. pointer-to-const
   * `mutable`
+  
+* constexpr – https://en.cppreference.com/w/cpp/language/constexpr
 
 * Zeichenliterale und Zeichenkettenliterale
   * `char`, `wchar_t`, `char16_t`, `char32_t`
@@ -90,11 +92,12 @@ https://en.cppreference.com/w/cpp/language/type
   * `static_cast`, `dynamic_cast`, `const_cast`, `reinterpret_cast`, Function-Style casts und C-Style casts:  `int i=(int)3.14;`
   * Umwandlungen von Zeigertypen
     * `char*` → `const char*` ✅
-    * `char**` → `const char**` ❌  ☠️ ⚠️
+    * `char**` → `const char**` ❌  ☠️  🤔
 
 ## Benutzerdefinierte Typen
 * `struct`, `class`, `union`, `enum`
 * Member (data member, member functions, virtual member functions)
+  * `const` Member, Referenzen als Member
 * Speicherlayout
   * Empty base optimization – https://en.cppreference.com/w/cpp/language/ebo
 * Konstruktoren, Destruktoren, Operatoren
@@ -109,20 +112,30 @@ https://en.cppreference.com/w/cpp/language/type
 
 
 ## Lambda-Ausdrücke
-
 * catch clause
 * return type
 * generic Lambdas (seit C++14)
 
 ## Standardbibliothek
 
-### Konzepte
+### Designkriterien & Konzepte
 * Templates statt Vererbung ("Compilezeit-Polymophie" statt Laufzeit-Polymorphie)
 * Iteratorkonzept
   * Halboffene Intervalle
   * Iteratorkategorien https://en.cppreference.com/w/cpp/iterator
+  * Iterator-Adapter
+    * Reverse-Iterator
+    * Insert-Iterator
+    * Move-Iterator
 
 ### Container
-
+https://en.cppreference.com/w/cpp/container
+* Heterogene Container:
+  * `std::vector<Base*>` vs. `std::vector< shared_ptr<Base> >` vs `boost::ptr_vector<Base>`
+  * Vererbung: `vector<Base>` ist _nicht_ verwandt mit `vector<Derived>`
 
 ### Algorithmen
+https://en.cppreference.com/w/cpp/algorithm
+* Ranges über Iteratoren
+* Input-Range i.d.R. begrenzt (begin, end), Output i.d.R. unbegrenzt.
+
