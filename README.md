@@ -108,13 +108,13 @@ https://en.cppreference.com/w/cpp/language/type
   `int T::*pm = &T::x; T t; t.*pm = 42;`
 
 
-## Lambda-Ausdrücke
+## Lambda-Ausdrücke
 
 * catch clause
 * return type
 * generic Lambdas (seit C++14)
 
-## Standardbibliothek
+## Standardbibliothek
 
 ### Konzepte
 * Templates statt Vererbung ("Compilezeit-Polymophie" statt Laufzeit-Polymorphie)
@@ -122,7 +122,7 @@ https://en.cppreference.com/w/cpp/language/type
   * Halboffene Intervalle
   * Iteratorkategorien https://en.cppreference.com/w/cpp/iterator
 
-### Container
+### Container
 
 
-### Algorithmen
+### Algorithmen
