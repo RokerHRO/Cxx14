@@ -24,6 +24,8 @@ https://en.cppreference.com/w/cpp/language/translation_phases
     * "linkage"
     * Link-time optimization (LTO)
 
+* Exkurs: Wie werden C/C++-Programme üblicherweise gelinkt?
+
 ## Begriffsbestimmungen
 * identifier vs. names  – https://en.cppreference.com/w/cpp/language/identifiers#Names
   * Reserved identifier: _keywords_, `…__…`, `_X…`, `::_…_`
@@ -39,43 +41,88 @@ https://en.cppreference.com/w/cpp/language/translation_phases
 * Value categories
   * rvalue, lvalue, prvalue, glvalue, xvalue
   * https://en.cppreference.com/w/cpp/language/value_category#prvalue
+
 * Beobachtbares Verhalten – https://en.cppreference.com/w/cpp/language/as_if
   * Ausnahmen:
     * https://en.cppreference.com/w/cpp/language/copy_elision
     * …
+
+* Auswertungsreihenfolge (evaluation order, sequence order)
+  * https://en.cppreference.com/w/cpp/language/eval_order
+  * "sequence points" (vor C++11)
+  * "sequenced-before" (seit C++11)
+  * Regeln änder(te)n des öfteren. Nicht "zu schlau" coden!
+
 * Implementation-defined behavior, unspecified behavior, undefined behavior
   * https://en.cppreference.com/w/cpp/language/ub
   * UB macht das _gesamte_ Programm ungültig!
+
 * RAII
   * Zur sicheren Verwaltung _aller_ Ressourcen, nicht nur von Speicher
   * exception-safety
-* Iteratorkonzept
-  * Halboffene Intervalle
-  * Iteratorkategorien https://en.cppreference.com/w/cpp/iterator
 
 ## Typen
 https://en.cppreference.com/w/cpp/language/type
 
 * incomplete types vs. complete types
+* Nullzeiger
 * Pointer vs. Array
+* Pointer vs. References
+* type qualifiers
+  * `const`, `volatile`
+  * const-pointer vs. pointer-to-const
+  * `mutable`
+
+* Zeichenliterale und Zeichenkettenliterale
+  * `char`, `wchar_t`, `char16_t`, `char32_t`
+  * "raw strings"
+  
+* Funktionen und Funktionszeiger
+
 * komplexe Deklarationen: `char *(*(**foo[][8])())[];`  http://unixwiz.net/techtips/reading-cdecl.html
   * Lösung: `typedef`, `using` deklarationen
+
 * Typ"umwandlungen":
-  * implizit vs. explizit
+  * implizit vs. explizit – https://en.cppreference.com/w/cpp/language/implicit_conversion
+  * Promotion, Conversion
   * werterhaltend vs. verlustbehaftet
   * vordefiniert (built-in) vs. benutzerdefiniert
   * `static_cast`, `dynamic_cast`, `const_cast`, `reinterpret_cast`, Function-Style casts und C-Style casts:  `int i=(int)3.14;`
+  * Umwandlungen von Zeigertypen
+    * `char*` → `const char*` ✅
+    * `char**` → `const char**` ❌  ☠️ ⚠️
 
 ## Benutzerdefinierte Typen
-  * `struct`, `class`, `union`, `enum`
-  * Member (data member, member functions, virtual)
-  * Speicherlayout
-    * Empty base optimization – https://en.cppreference.com/w/cpp/language/ebo
-  * Konstruktoren, Destruktoren, Operatoren
-    * Copy-C'tor, Move-C'tor, "Rule of 3", RAII, `explicit`
-    * `=default`, `=delete`
-  * Vererbung
-    * Mehrfachvererbung, "virtual base class"
-    * Abstrakte (Basis-)klassen
-  * Pointer to member
-    `int T::*pm = &T::x; T t; t.*pm = 42;`
+* `struct`, `class`, `union`, `enum`
+* Member (data member, member functions, virtual member functions)
+* Speicherlayout
+  * Empty base optimization – https://en.cppreference.com/w/cpp/language/ebo
+* Konstruktoren, Destruktoren, Operatoren
+  * Copy-C'tor, Move-C'tor, "Rule of 3", RAII, `explicit`
+  * `=default`, `=delete`
+  * `operator()`
+* Vererbung
+  * Mehrfachvererbung, "virtual base class"
+  * Abstrakte (Basis-)klassen
+* Pointer to member
+  `int T::*pm = &T::x; T t; t.*pm = 42;`
+
+
+## Lambda-Ausdrücke
+
+* catch clause
+* return type
+* generic Lambdas (seit C++14)
+
+## Standardbibliothek
+
+### Konzepte
+* Templates statt Vererbung ("Compilezeit-Polymophie" statt Laufzeit-Polymorphie)
+* Iteratorkonzept
+  * Halboffene Intervalle
+  * Iteratorkategorien https://en.cppreference.com/w/cpp/iterator
+
+### Container
+
+
+### Algorithmen
