@@ -92,7 +92,7 @@ https://en.cppreference.com/w/cpp/language/type
   * `static_cast`, `dynamic_cast`, `const_cast`, `reinterpret_cast`, Function-Style casts und C-Style casts:  `int i=(int)3.14;`
   * Umwandlungen von Zeigertypen
     * `char*` → `const char*` ✅
-    * `char**` → `const char**` ❌  ☠️  🤔
+    * `char**` → `const char**` ❌
 
 ## Benutzerdefinierte Typen
 * `struct`, `class`, `union`, `enum`
@@ -111,11 +111,24 @@ https://en.cppreference.com/w/cpp/language/type
 * Pointer to member
   `int T::*pm = &T::x; T t; t.*pm = 42;`
 
+## Namensräume
+* Unterschiede zu Klassen
+* globaler Namensraum
+* unbenannte / anonyme Namensräume
+
 
 ## Lambda-Ausdrücke
+https://en.cppreference.com/w/cpp/language/lambda
 * catch clause
 * return type
 * generic Lambdas (seit C++14)
+
+## Templates
+https://en.cppreference.com/w/cpp/language/templates
+* Klassentemplates, Funktionstemplates, Variablen-Template
+* Aliastypes
+* Type parameter, non-type parameter, template parameter
+* variadic templates
 
 ## Standardbibliothek
 
