@@ -1,4 +1,4 @@
-# C++14 – Schnelleinführung für jemanden, der C# kennt. :-)
+# Schnelleinführung in C++14 (und 17 und 20) für jemanden, der C# kennt. :-)
 
 https://en.cppreference.com/w/
 
@@ -66,7 +66,7 @@ https://en.cppreference.com/w/cpp/language/type
 
 * incomplete types vs. complete types
 * Nullzeiger
-* Pointer vs. Array
+* Pointer vs. Array — `const char* p = "Foobar":` vs. `const char a[] = "Foobar";`
 * Pointer vs. References
 * type qualifiers
   * `const`, `volatile`
@@ -92,6 +92,8 @@ https://en.cppreference.com/w/cpp/language/type
   * "raw strings": `const char* s = R"--(foo bar)--";`
   
 * Funktionen und Funktionszeiger
+  * `double (*mean)(double, double) = &arithmetic_mean;`
+  * https://en.cppreference.com/w/cpp/language/pointer#Pointers_to_functions
 
 * komplexe Deklarationen: `char *(*(**foo[][8])())[];`  http://unixwiz.net/techtips/reading-cdecl.html
   * Lösung:
