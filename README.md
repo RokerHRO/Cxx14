@@ -76,7 +76,19 @@ https://en.cppreference.com/w/cpp/language/type
 * constexpr – https://en.cppreference.com/w/cpp/language/constexpr
 
 * Zeichenliterale und Zeichenkettenliterale
-  * `char`, `wchar_t`, `char16_t`, `char32_t`
+  | Typ | Literal | C++-String-Typ | Literal | Bemerkung |
+  |-----|---------|----------------|---------|-----------|
+  | `char`     | `'f'` `"foo"`   | `std::string` | `"foo"s` | |
+  | `wchar_t`  | `L'f'` `L"foo"` | `std::wstring` | `L"foo"s`  | "wide strings", Wie in C|
+  | `char16_t` | `u'f'` `u"foo"` | `std::u16string` | `u"foo"s` | UTF-16 |
+  | `char32_t` | `U'f'` `U"foo"` | `std::u32string` | `U"foo"s` | UTF-32 |
+  
+  * Und UTF-8?
+    *  `u8"foo"` — char-Array, aber garantiert UTF-8, seit C++11 |
+    *  `u8'f'` — seit C++17, nur 0x00…0x7f
+    *  seit C++20: `char8_t` – wie `unsigned char`, aber eigener Datentyp. `std::u8string`
+    *  de-factor einfach `char` und `std::string` in Verwendung
+  
   * "raw strings"
   
 * Funktionen und Funktionszeiger
