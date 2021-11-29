@@ -84,17 +84,23 @@ https://en.cppreference.com/w/cpp/language/type
   | `char32_t` | `U'f'` `U"foo"` | `std::u32string` | `U"foo"s` | UTF-32 |
   
   * Und UTF-8?
-    *  `u8"foo"` — char-Array, aber garantiert UTF-8, seit C++11 |
+    *  `u8"foo"` — char-Array, aber garantiert UTF-8, seit C++11
     *  `u8'f'` — seit C++17, nur 0x00…0x7f
     *  seit C++20: `char8_t` – wie `unsigned char`, aber eigener Datentyp. `std::u8string`
     *  de-factor einfach `char` und `std::string` in Verwendung
   
-  * "raw strings"
+  * "raw strings": `const char* s = R"--(foo bar)--";`
   
 * Funktionen und Funktionszeiger
 
 * komplexe Deklarationen: `char *(*(**foo[][8])())[];`  http://unixwiz.net/techtips/reading-cdecl.html
-  * Lösung: `typedef`, `using` deklarationen
+  * Lösung:
+    | typedef | using declaration |
+    |---------|-------------------|
+    | `typedef unsigned long int ulong;` | `using ulong = unsigned long int;` | 
+    | `typedef void (*func_t)(int, int);` | `using func_t = void (*)(int, int);` |
+    | `typedef int (Foo::*Bar)(int);` | `using Bar = int (Foo::*)(int);` |
+    | ❌ | `template <class T>  Symbol = std::map<std::string, T>;` |
 
 * Typ"umwandlungen":
   * implizit vs. explizit – https://en.cppreference.com/w/cpp/language/implicit_conversion
